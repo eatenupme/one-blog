@@ -1,0 +1,237 @@
+/* footer custom */
+
+footer nav ul {
+    flex-direction: column;
+    align-items: start;
+    color: var(--pico-muted-color);
+}
+
+@media (min-width:576px) {
+    footer nav ul {
+        flex-direction: row;
+    }
+}
+
+/* header custom */
+
+.header {
+    z-index: 2;
+    position: sticky;
+    top: 0;
+    -webkit-backdrop-filter: blur(1rem);
+    backdrop-filter: blur(1rem);
+    background-color: var(--pico-header-background);
+    transition: border-top-color .4s ease-in-out, box-shadow .4s ease-in-out;
+    padding: .5rem 0;
+    border-bottom: var(--pico-border-width) solid transparent;
+}
+
+.fixed {
+    border-bottom-color: var(--pico-header-border-color);
+    box-shadow: var(--pico-card-box-shadow);
+}
+
+header>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* main custom */
+
+code,
+kbd {
+    padding: .25rem;
+}
+
+blockquote p {
+    margin-bottom: 0;
+}
+
+blockquote {
+    padding: calc(var(--pico-spacing) / 5) var(--pico-spacing);
+}
+
+.icon-theme-toggle {
+    --theme-toggle-duration: 400ms;
+}
+
+g circle,
+path {
+    transform-origin: center;
+    transition: transform calc(var(--theme-toggle-duration) * 0.65) cubic-bezier(0, 0, 0, 1.25) calc(var(--theme-toggle-duration) * 0.35);
+}
+
+clipPath path {
+    transition-duration: calc(var(--theme-toggle-duration) * 0.6);
+    transition-property: transform, d;
+}
+
+[data-theme=light] clipPath path {
+    transition-timing-function: cubic-bezier(0, 0, 0.5, 1);
+}
+
+[data-theme=dark] clipPath path {
+    transition-delay: calc(var(--theme-toggle-duration) * 0.4);
+    transition-timing-function: cubic-bezier(0, 0, 0, 1.25);
+    transform: translate3d(-9px, 14px, 0);
+}
+
+[data-theme=dark] g circle {
+    transform: scale(1.4);
+    transition-delay: 0s;
+}
+
+[data-theme=dark] g path {
+    transform: scale(0.75);
+    transition-delay: 0s;
+}
+
+/* hljs custom */
+
+[data-theme=light] {
+    --hljs-color: #24292e;
+    --hljs-keyword-color: #d73a49;
+    --hljs-title-color: #6f42c1;
+    --hljs-attr-color: #005cc5;
+    --hljs-string-color: #032f62;
+    --hljs-symbol-color: #e36209;
+    --hljs-code-color: #6a737d;
+    --hljs-quote-color: #22863a;
+    --hljs-subst-color: #24292e;
+    --hljs-section-color: #005cc5;
+    --hljs-bullet-color: #735c0f;
+    --hljs-emphasis-color: #24292e;
+    --hljs-strong-color: #24292e;
+    --hljs-deletion-color: #b31d28;
+    --hljs-addition-color: #22863a;
+    --hljs-deletion-background-color: #ffeef0;
+    --hljs-addition-background-color: #f0fff4;
+
+    --pico-header-background: rgba(255, 255, 255, .8);
+    --pico-header-border-color: transparent;
+}
+
+[data-theme=dark] {
+    --hljs-color: #c9d1d9;
+    --hljs-keyword-color: #ff7b72;
+    --hljs-title-color: #d2a8ff;
+    --hljs-attr-color: #79c0ff;
+    --hljs-string-color: #a5d6ff;
+    --hljs-symbol-color: #ffa657;
+    --hljs-code-color: #8b949e;
+    --hljs-quote-color: #7ee787;
+    --hljs-subst-color: #c9d1d9;
+    --hljs-section-color: #1f6feb;
+    --hljs-bullet-color: #f2cc60;
+    --hljs-emphasis-color: #c9d1d9;
+    --hljs-strong-color: #c9d1d9;
+    --hljs-deletion-color: #ffdcd7;
+    --hljs-deletion-background-color: #67060c;
+
+    --pico-header-background: rgba(19, 23, 31, .9);
+    --pico-header-border-color: rgba(32, 38, 50, .9);
+}
+
+
+
+code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 1em
+}
+
+code.hljs {
+    padding: 3px 5px
+}
+
+.hljs {
+    color: var(--hljs-color);
+    background: var(--pico-code-background-color)
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+    color: var(--hljs-keyword-color)
+}
+
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+    color: var(--hljs-title-color)
+}
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id,
+.hljs-variable {
+    color: var(--hljs-attr-color)
+}
+
+.hljs-meta .hljs-string,
+.hljs-regexp,
+.hljs-string {
+    color: var(--hljs-string-color)
+}
+
+.hljs-built_in,
+.hljs-symbol {
+    color: var(--hljs-symbol-color)
+}
+
+.hljs-code,
+.hljs-comment,
+.hljs-formula {
+    color: var(--hljs-code-color)
+}
+
+.hljs-name,
+.hljs-quote,
+.hljs-selector-pseudo,
+.hljs-selector-tag {
+    color: var(--hljs-quote-color)
+}
+
+.hljs-subst {
+    color: var(--hljs-subst-color)
+}
+
+.hljs-section {
+    color: var(--hljs-section-color);
+    font-weight: 700
+}
+
+.hljs-bullet {
+    color: var(--hljs-bullet-color)
+}
+
+.hljs-emphasis {
+    color: var(--hljs-emphasis-color);
+    font-style: italic
+}
+
+.hljs-strong {
+    color: var(--hljs-strong-color);
+    font-weight: 700
+}
+
+.hljs-deletion {
+    color: var(--hljs-deletion-color);
+    background-color: var(--hljs-deletion-background-color)
+}
+
+.hljs-addition {
+    color: var(--hljs-addition-color);
+    background-color: var(--hljs-addition-background-color)
+}
